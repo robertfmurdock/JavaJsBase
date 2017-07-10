@@ -1,4 +1,4 @@
-FROM node:7-slim
+FROM node:8-slim
 
 RUN echo "deb http://http.debian.net/debian jessie-backports main" | \
     tee --append /etc/apt/sources.list.d/jessie-backports.list > /dev/null \
