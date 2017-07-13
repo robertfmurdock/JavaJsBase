@@ -6,4 +6,10 @@ RUN echo "deb http://http.debian.net/debian jessie-backports main" | \
   && apt-get install -y -t jessie-backports\
        git \
        bzip2 \
-       openjdk-8-jre
+       openjdk-8-jre \
+       xvfb \
+       chromium
+
+ADD xvfb-chromium /usr/bin/xvfb-chromium
+RUN ln -s /usr/bin/xvfb-chromium /usr/bin/google-chrome \
+  && ln -s /usr/bin/xvfb-chromium /usr/bin/chromium-browser
